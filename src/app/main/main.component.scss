@@ -1,0 +1,57 @@
+mat-toolbar {
+    mat-toolbar-row {
+        max-width: 900px;
+        margin: 0 auto;
+        //padding: 10px 10px 0 10px;
+        padding: 0;
+        height: auto;
+
+        .profile {
+            display: flex;
+            flex-direction: column;
+
+            .avatar {
+                background: white;
+                border-radius: 50%;
+                overflow: hidden;
+                min-width: 80px;
+                min-height: 80px;
+                max-width: 80px;
+                max-height: 80px;
+            }
+
+            p {
+                margin: 0;
+                text-align: center;
+                font-size: 16px;
+            }
+        }
+
+        .toolbar-actions {
+            flex: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding-left: 20px;
+
+            .toolbar-actions-top {
+                display: flex;
+                align-items: center;
+
+                a {
+                    margin-right: 10px;
+                }
+            }
+
+            .toolbar-buttons {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+
+    mat-form-field {
+        flex: 1;
+        font-size: 15px;
+    }
+}
