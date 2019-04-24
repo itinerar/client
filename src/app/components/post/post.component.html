@@ -1,0 +1,51 @@
+<mat-card>
+    <mat-card-header>
+        <div class="post-header-image" mat-card-avatar></div>
+        <mat-card-title>
+            <a [routerLink]="['/profile', {user: post.journey.user.id}]">
+                {{post.journey.user.name}}
+            </a>
+            <div class="location">
+                <a [routerLink]="['/journey', post.journey.id]">{{post.journey.name}}</a>
+                <img alt="" src="/assets/maps-icon.png">
+                <!--<div class="image"></div>-->
+            </div>
+        </mat-card-title>
+        <mat-card-subtitle>
+            {{post.createdAt}}
+        </mat-card-subtitle>
+    </mat-card-header>
+    <!--<img mat-card-image [src]="post.image">-->
+    <div (click)="openPhotosDialog(post)" class="image-gallery" mat-card-image>
+        <!--<div class="map"></div>-->
+        <img [src]="'http://localhost:8080/photo/' + post.photos[0].id" mat-card-image>
+        <!--<img *ngFor="let photo of post.photos" [src]="photo.path" mat-card-image>-->
+        <!--<div class="map-wrapper">-->
+        <!--</div>-->
+    </div>
+    <mat-card-content>
+        <p>{{post.description}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button (click)="toggleLike()" color="primary" mat-button>
+            <mat-icon>thumb_up</mat-icon>
+            LIKE
+        </button>
+        <button color="accent" mat-button>
+            <mat-icon>share</mat-icon>
+            SHARE
+        </button>
+        <!--<mat-chip-list>-->
+        <!--<mat-chip color="primary" selected>{{post.likes?.length}} likes</mat-chip>-->
+        <!--</mat-chip-list>-->
+    </mat-card-actions>
+    <mat-divider></mat-divider>
+    <app-comment *ngFor="let comment of post.comments" [comment]="comment"></app-comment>
+    <mat-card class="comment-form">
+        <form (submit)="addComment($event)">
+            <mat-form-field>
+                <input [(ngModel)]="commentMessage" matInput name="commentMessage" placeholder="Comment">
+            </mat-form-field>
+        </form>
+    </mat-card>
+</mat-card>
