@@ -1,0 +1,25 @@
+<mat-card class="login-card">
+    <mat-card-header>
+        <mat-card-title class="text-center">
+            <h3>ITINERAR - Register</h3>
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form class="example-form">
+            <mat-form-field class="example-full-width">
+                <input [(ngModel)]="email" matInput name="username" placeholder="Emial" required>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <input [(ngModel)]="password" matInput name="password" placeholder="Password" required type="password">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <input [(ngModel)]="repeatPassword" matInput name="repeatPassword" placeholder="Repeat password" required type="password">
+            </mat-form-field>
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+        <button (click)="register()" color="primary" mat-raised-button>Register</button>
+        <hr>
+        <button color="primary" mat-raised-button routerLink="/login">Login</button>
+    </mat-card-actions>
+</mat-card>

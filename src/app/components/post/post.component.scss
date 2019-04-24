@@ -1,0 +1,160 @@
+@import "./src/styles";
+
+.mat-card {
+    margin-top: 10px;
+
+    mat-chip-list {
+        display: inline-block;
+    }
+
+    mat-card-header {
+        ::ng-deep {
+            .mat-card-header-text {
+                width: 100%;
+            }
+        }
+
+        .location {
+            float: right;
+            display: flex;
+            align-items: center;
+
+            //.image{
+            //    background: url(/assets/maps-icon.png);
+            //    width: 100px;
+            //    height: 100px;
+            //    margin-top: -20px;
+            //    margin-right: -40px;
+            //}
+            img {
+                //background: url(/assets/maps-icon.png);
+                width: 100px;
+                height: 100px;
+                margin-top: -23px;
+                margin-right: -42px;
+                margin-bottom: -14px;
+            }
+        }
+    }
+
+    .image-gallery {
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        align-items: center;
+        background: #c7c7c7;
+
+        img.mat-card-image {
+            min-width: 100%;
+            height: 100%;
+            margin: 0;
+            clip-path: polygon(0px 0px, 100% 0px, 150% 100%, 0% 100%);
+            transition: all 1s ease-in-out;
+        }
+
+        //&:hover:not(img) {
+        //    img.mat-card-image {
+        //        clip-path: polygon(0px 0px, 25% 0px, 25% 100%, 0% 100%);
+        //    }
+        //}
+
+        //.map-wrapper {
+        //    position: absolute;
+        //    top: 0;
+        //    left: 1px;
+        //    height: 100%;
+        //    width: 100%;
+        //    transform: translate(-100px, 0)  skew(40deg);
+        //    overflow: hidden;
+        //    .map {
+        //        transform: skew(-40deg);
+        //        background: url("http://www.outdoorblueprint.com/outdoors-101/plan-a-road-trip-route-with-google-maps/step6a.png");
+        //        transition: all 2s linear;
+        //        height: 100%;
+        //        &:hover {
+        //
+        //        }
+        //    }
+        //}
+
+        //.map {
+        //    position: absolute;
+        //    top: 0;
+        //    left: 1px;
+        //    height: 100%;
+        //    width: 100%;
+        //    background: url("http://www.outdoorblueprint.com/outdoors-101/plan-a-road-trip-route-with-google-maps/step6a.png");
+        //    transition: all 2s linear;
+        //    transform: skew(40deg);
+        //
+        //    //mask-image: -webkit-gradient(
+        //    //        linear, right top, left bottom,
+        //    //        color-stop(0, black),
+        //    //        color-stop(0.05, black),
+        //    //        color-stop(0.4, rgba(0, 0, 0, 0)),
+        //    //        color-stop(0.95, rgba(0, 0, 0, 0)),
+        //    //        color-stop(1, rgba(0, 0, 0, 0))
+        //    //);
+        //    //transform: scale(1);
+        //
+        //    &:hover {
+        //        //mask-image: -webkit-gradient(
+        //        //        linear, right top, left bottom,
+        //        //        color-stop(0, rgba(0, 0, 0, 1)),
+        //        //        color-stop(0.55, rgba(0, 0, 0, 1)),
+        //        //        color-stop(0.6, rgba(0, 0, 0, 0)),
+        //        //        color-stop(0.95, rgba(0, 0, 0, 0)),
+        //        //        color-stop(1, rgba(0, 0, 0, 0))
+        //        //);
+        //        //transform: scale(3);
+        //    }
+        //}
+        .map {
+            position: absolute;
+            top: 0;
+            left: 1px;
+            height: 100%;
+            width: 100%;
+            background: url("http://www.outdoorblueprint.com/outdoors-101/plan-a-road-trip-route-with-google-maps/step6a.png");
+            background-size: cover;
+            transition: all 2s linear;
+
+            //mask-image: -webkit-gradient(
+            //        linear, right top, left bottom,
+            //        color-stop(0, black),
+            //        color-stop(0.05, black),
+            //        color-stop(0.4, rgba(0, 0, 0, 0)),
+            //        color-stop(0.95, rgba(0, 0, 0, 0)),
+            //        color-stop(1, rgba(0, 0, 0, 0))
+            //);
+            //transform: scale(1);
+
+                //mask-image: -webkit-gradient(
+                //        linear, right top, left bottom,
+                //        color-stop(0, rgba(0, 0, 0, 1)),
+                //        color-stop(0.55, rgba(0, 0, 0, 1)),
+                //        color-stop(0.6, rgba(0, 0, 0, 0)),
+                //        color-stop(0.95, rgba(0, 0, 0, 0)),
+                //        color-stop(1, rgba(0, 0, 0, 0))
+                //);
+                //transform: scale(3);
+        }
+    }
+
+    .post-header-image {
+        background-image: url($avatar);
+        background-size: contain;
+    }
+
+    app-comment {
+        display: block;
+        margin-top: 20px;
+    }
+
+    .comment-form {
+        mat-form-field {
+            width: 100%;
+        }
+    }
+
+}

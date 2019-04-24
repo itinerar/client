@@ -1,0 +1,5 @@
+<div class="photos">
+    <!--<div class="photo" *ngFor="let photo of post.photos" [style.backgroundImage]="'url('+photo.path+')'"></div>-->
+    <!--<img *ngFor="let photo of post.photos" [src]="photo.path" class="photo">-->
+    <img *ngFor="let photo of post.photos" [src]="'http://localhost:8080/photo/' + photo.id" class="photo">
+</div>
