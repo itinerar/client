@@ -1,0 +1,18 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            {{ journey?.name }}
+        </mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="assets/itinerar.png" width="100%">
+    <mat-card-actions>
+        <mat-chip-list>
+            <mat-chip>You and 5 people went here</mat-chip>
+            <mat-chip>{{ journey?.likes }} people like this</mat-chip>
+        </mat-chip-list>
+        <button [routerLink]="['/journey', journey?.id]" class="start-journey" color="primary" mat-flat-button>
+            <mat-icon>card_travel</mat-icon>
+            View journey
+        </button>
+    </mat-card-actions>
+</mat-card>
