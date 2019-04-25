@@ -1,0 +1,17 @@
+<div class="container">
+    <mat-tab-group>
+        <mat-tab label="Groups">
+
+            <div class="groups-container">
+                <app-group (remove)="user.groups.remove(group)"
+                           *ngFor="let group of user?.groups"
+                           [group]="group"
+                ></app-group>
+            </div>
+
+        </mat-tab>
+        <mat-tab label="Find">
+            Find
+        </mat-tab>
+    </mat-tab-group>
+</div>

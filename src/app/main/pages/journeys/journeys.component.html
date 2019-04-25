@@ -1,0 +1,12 @@
+<div class="journeys-container">
+    <div class="journeys-sidenav">
+        <mat-form-field>
+            <input (input)="searchJourneys()" [(ngModel)]="searchTerm" matInput placeholder="Search">
+        </mat-form-field>
+        <div *ngFor="let journey of journeys">
+            {{ journey.name }}
+        </div>
+    </div>
+    <!--<div style="flex:1"></div>-->
+    <app-map></app-map>
+</div>

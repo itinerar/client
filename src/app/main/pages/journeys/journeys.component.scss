@@ -1,0 +1,15 @@
+.journeys-container {
+    display: flex;
+    flex-direction: row;
+    min-height: 560px;
+
+    .journeys-sidenav {
+        min-width: 200px;
+    }
+
+    app-map {
+        flex: 1;
+        //height: 100%;
+        display: block;
+    }
+}

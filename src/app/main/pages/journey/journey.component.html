@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="header">
+        <h2>{{ journey?.name }}</h2> Posted on {{ journey?.date | date: 'dd-MM-yyyy H:m' }}
+        <button (click)="copy()" *ngIf="journey?.user.id !== user?.id" color="primary" mat-flat-button>
+            Copy journey
+        </button>
+    </div>
+    <!--<img alt="" src="/assets/itinerar.png">-->
+    <!--<button (click)="next()">Next</button>-->
+    <!--<button (click)="print()">Print</button>-->
+    <div #map style="width:100%; height:500px"></div>
+    <app-post *ngFor="let post of posts" [post]="post"></app-post>
+    <div *ngIf="!posts?.length">
+        <hr>
+        <a [routerLink]="['/']" color="primary" mat-flat-button style="width: 100%;">Add your first post</a>
+    </div>
+</div>

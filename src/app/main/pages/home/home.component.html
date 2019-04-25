@@ -1,0 +1,41 @@
+<mat-card *ngIf="user?.activeJourney || !posting" class="active-journey">
+    <mat-card-header>
+        <mat-card-title>
+            <mat-form-field>
+                <mat-select [(ngModel)]="post.journey" placeholder="Select Journey">
+                    <mat-option *ngFor="let journey of user?.journeys" [value]="journey">
+                        {{journey.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </mat-card-title>
+        <mat-form-field>
+            <input [(ngModel)]="post.description" matInput placeholder="How is your journey?">
+        </mat-form-field>
+        <button (click)="imagesInput.click()" color="primary" mat-flat-button>
+            <input #imagesInput (change)="showImages($event)" accept=".jpg,.png,.gif,.jpeg" hidden multiple
+                   type="file"/>
+            <mat-icon>camera</mat-icon>
+            Add Images
+        </button>
+    </mat-card-header>
+    <div *ngFor="let photo of post.photos" class="active-journey-post-image">
+        <mat-icon (click)="post.photos.remove(photo)">close</mat-icon>
+        <img [alt]="photo.id" [src]="photo.path">
+    </div>
+    <div *ngIf="post.photos.length">
+        <mat-form-field>
+            <mat-select [(ngModel)]="post.status" placeholder="Who can see this?">
+                <mat-option *ngFor="let visibility of visibilities" [value]="visibility.value">
+                    {{visibility.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button (click)="savePost()" color="primary" mat-flat-button>Post</button>
+    </div>
+</mat-card>
+<mat-card style="justify-content: center; align-items: center; display: flex;" *ngIf="posting">
+    <mat-spinner></mat-spinner>
+</mat-card>
+<app-post *ngFor="let post of posts" [post]="post"></app-post>
+

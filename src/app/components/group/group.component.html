@@ -1,0 +1,13 @@
+<mat-card>
+    <div class="picture">
+        <mat-icon>{{ group.picture }}</mat-icon>
+    </div>
+    <mat-card-content>
+        <h3>{{group.name}}</h3>
+        <p>{{ group.about.substring( 0, 90 ) }}</p>
+        <mat-chip-list>
+            <mat-chip>{{group.members}} members</mat-chip>
+            <mat-chip (click)="remove.emit(group)" color="primary" selected>Leave</mat-chip>
+        </mat-chip-list>
+    </mat-card-content>
+</mat-card>

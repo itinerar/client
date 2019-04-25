@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Where is your adventure taking place?</h1>
+<div mat-dialog-content>
+    <div #map style="width:100%; height:500px"></div>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="dialogRef.close()">Cancel</button>
+    <button mat-button [mat-dialog-close]="checkpoint" cdkFocusInitial color="primary">Post</button>
+</div>
