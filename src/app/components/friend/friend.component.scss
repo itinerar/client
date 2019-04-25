@@ -1,0 +1,30 @@
+:host {
+    min-width: 300px;
+    display: block;
+}
+
+mat-card {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+
+    mat-card-content {
+        margin-left: 20px;
+        display: flex;
+        flex-direction: column;
+
+        h3 {
+            flex: 1;
+        }
+    }
+
+    .picture {
+        min-width: 70px;
+        display: flex;
+        align-items: center;
+
+        img {
+            width: 100px;
+        }
+    }
+}
