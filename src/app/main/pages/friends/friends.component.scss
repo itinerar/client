@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+
+    mat-tab-group {
+        width: 100%;
+
+        app-friend {
+            flex: 1;
+            width: 50%;
+            display: inline-block;
+        }
+    }
+}
