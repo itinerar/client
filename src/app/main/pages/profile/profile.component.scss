@@ -1,0 +1,83 @@
+@import "./src/styles";
+
+.world-map {
+    width: 85%;
+    margin: 0 auto;
+    position: relative;
+    height: 600px;
+
+    img {
+        width: 100%;
+    }
+
+    .album-image {
+        border: 3px solid white;
+        width: 90px;
+        transform: rotateZ(-15deg);
+        position: absolute;
+        transition: all 0.5s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(5);
+            z-index: 2;
+            //border: 1px solid white;
+        }
+
+        &.position-1 {
+            top: 100px;
+            left: 300px;
+        }
+    }
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .name {
+        flex: 1;
+    }
+
+    .more-info {
+        margin: 0 10px;
+    }
+
+    .avatar {
+        background-image: url($avatar);
+        width: 100px;
+        height: 100px;
+        background-size: contain;
+    }
+
+    mat-card-footer {
+        min-height: 700px;
+    }
+
+    mat-tab-group {
+        ::ng-deep mat-tab-body {
+            overflow: visible;
+
+            .mat-tab-body-content {
+                overflow: visible;
+            }
+
+            margin: 10px;
+        }
+
+        ::ng-deep .mat-tab-body-content {
+            overflow: hidden;
+        }
+
+        app-friend {
+            display: inline-block;
+            width: 50%;
+        }
+
+        app-group {
+            display: inline-block;
+            width: 50%;
+        }
+    }
+}

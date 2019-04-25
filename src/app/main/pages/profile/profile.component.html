@@ -1,0 +1,47 @@
+<!--<div class="world-map">-->
+<!--<img alt="" src="/assets/world.png">-->
+<!--<img *ngFor="let image of images; let index = index"-->
+<!--[ngStyle]="{'left.%': positions[index][0],'top.%':positions[index][1]}"-->
+<!--[src]="image"-->
+<!--class="album-image"-->
+<!--[routerLink]="['/journey', index+1]"-->
+<!--&gt;-->
+<!--</div>-->
+
+<div #map class="world-map"></div>
+<div class="container">
+    <mat-card class="profile-info">
+        <div class="avatar"></div>
+        <h3 class="name">
+            {{profile?.name}}
+        </h3>
+        <button *ngIf="user?.id !== profile?.id && !friends?.findWhere('id', user.id)" mat-flat-button color="primary" class="pull-right" (click)="sendFriendRequest()">
+            Add friend
+        </button>
+        <mat-card-footer>
+            <mat-tab-group>
+                <mat-tab label="Posts">
+                    <app-post *ngFor="let post of posts " [post]="post"></app-post>
+                </mat-tab>
+                <mat-tab label="Journeys">
+                    <app-profile-journey *ngFor="let journey of journeys"
+                                         [journey]="journey"></app-profile-journey>
+                </mat-tab>
+                <mat-tab label="Friends">
+                    <app-friend *ngFor="let friend of friends" [friend]="friend"
+                                (remove)="friends.remove(friend)"></app-friend>
+                </mat-tab>
+                <mat-tab label="Groups">
+                    <app-group *ngFor="let group of profile?.groups"
+                               [group]="group"
+                               (remove)="profile.groups.remove(group)"
+                    ></app-group>
+                </mat-tab>
+                <mat-tab label="About">
+
+                </mat-tab>
+            </mat-tab-group>
+        </mat-card-footer>
+    </mat-card>
+
+</div>
