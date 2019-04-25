@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>Start your new adventure</h1>
+<div mat-dialog-content>
+    <mat-form-field style="width: 100%;">
+        <input matInput placeholder="Your adventure's name" [(ngModel)]="journey.name">
+    </mat-form-field>
+
+    <mat-form-field style="width: 100%;">
+        <textarea matInput placeholder="Description"></textarea>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="dialogRef.close()">Cancel</button>
+    <button mat-button [mat-dialog-close]="journey" cdkFocusInitial color="primary">Start Journey</button>
+</div>
